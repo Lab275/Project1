@@ -21,8 +21,8 @@ function Header  () {
       <nav ref={navRef}>
         <ul >
             <NavLink className="menuBar" to='/'>Home</NavLink>
+            <NavLink className="menuBar" to='/userpage'>Workstation</NavLink>
             <NavLink className="menuBar" to='/support'>CTDI</NavLink>
-            <NavLink className="menuBar" to='/userpage'>Associate</NavLink>
         </ul>
         <button className='nav-btn nav-close-btn' onClick={showNavBar}><FaTimes/></button>
       </nav>
