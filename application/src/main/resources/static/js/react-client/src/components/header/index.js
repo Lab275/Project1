@@ -1,22 +1,32 @@
+import  './headerStyl.css';
+
+import {FaBars, FaTimes} from "react-icons/fa";
+
 import { NavLink } from "react-router-dom";
 import React from "react";
-import style from './headerStyle.module.scss';
+import { useRef } from "react";
 
-const Header = () => {
+function Header  () {
+  const navRef = useRef(); 
+  
+  const showNavBar =() =>{
+    navRef.current.classList.toggle('responsive_nav');
+  }
+  
   return (
-    <header className={style.header}>
+    <header>
       
-      <h1 className={style.title}>Stark Track</h1>
-     
-      
-    
-      <nav className={style.navList}>
-        <ul className={style.navList}>
-            <NavLink to='/'>Home</NavLink>
-            <NavLink to='/support'>CTDI</NavLink>
-            <NavLink to='/userpage'>Associate</NavLink>
+      <h3 >Stark Track</h3>
+        
+      <nav ref={navRef}>
+        <ul >
+            <NavLink className="menuBar" to='/'>Home</NavLink>
+            <NavLink className="menuBar" to='/support'>CTDI</NavLink>
+            <NavLink className="menuBar" to='/userpage'>Associate</NavLink>
         </ul>
+        <button className='nav-btn nav-close-btn' onClick={showNavBar}><FaTimes/></button>
       </nav>
+      <button className='nav-btn' onClick={showNavBar}><FaBars/></button>
   
       </header>
   );
